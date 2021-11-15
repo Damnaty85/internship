@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="description" content="Internship in the company">
     <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="title" content="Intership">
+    <meta name="title" content="Senla">
     <meta name="author" content="Anton">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -87,99 +87,113 @@
                 </tbody>
             </table>
             <div class="form">
+                <h2>Form</h2>
                 <form action="/" method="GET">
-                    <div class="form-group">
-                        <label for="defaultField">Input type text</label>
-                        <input type="text" value="" id="defaultField" placeholder="Input type text">
-                    </div>
-                    <div class="form-group">
-                        <label for="numberField">Input type number</label>
-                        <input id="numberField" type="number" min="1" max="10" value="3">
-                    </div>
-                    <div class="form-group">
+                    <fieldset>
+                        <legend>Form input</legend>
+                        <label>checkbox1<input type="checkbox" name="value" value="1"></label>
+                        <label>checkbox2<input type="checkbox" name="value" value="2"></label>
+                        <label>checkbox3<input type="checkbox" name="value" value="3"></label>
+                        <label>checkbox4<input type="checkbox" name="value" value="4"></label>
+                        <br>
+                        <label>radio1<input type="radio" name="radio" value="1"></label>
+                        <label>radio2<input type="radio" name="radio" value="2"></label>
+                        <label>radio3<input type="radio" name="radio" value="3"></label>
+                        <label>radio4<input type="radio" name="radio" value="4"></label>
+                        <br>
+                        <input type="color">
+                        <br>
                         <label>
-                            <span>Input type range</span>
-                            <input type="Range" list="values">
+                            <span>Date input</span>
+                            <input type="date" value="2018-07-22" min="2018-01-01" max="2018-12-31">
+                            <input id="datetime" type="datetime-local">
+                            <input type="time" min="09:00" max="18:00">
+                            <input type="week" name="week" min="2018-W18" max="2018-W26">
+                            <input type="month" min="2018-03" value="2018-05">
                         </label>
-                        <datalist id="values">
-                            <option value="0"> 
-                            <option value="10">
-                            <option value="20">
-                            <option value="30">
-                            <option value="40">
-                            <option value="50">
-                            <option value="60">
-                            <option value="70">
-                            <option value="80">
-                            <option value="90">
-                            <option value="100">
-                          </datalist>
-                    </div>
-                    <div class="form-group">
-                        <span>Phone and Email type field</span>
-                        <input type="tel" value="" pattern="+7{1} ([0-9]{3}) [0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="Phone: +7 (999) 999-99-99">
-                        <input type="email" value="" placeholder="Email field">
-                    </div>
-                    <div class="form-group">
-                        <fieldset>
-                            <legend>Input type radio</legend>
-                            <label for="1">1</label>
-                            <input type="radio" name="radio" id="1">
-                            <label for="2">2</label>
-                            <input type="radio" name="radio" id="2" checked>
-                            <label for="3">3</label>
-                            <input type="radio" name="radio" id="3">
-                        </fieldset>
-                    </div>
-                    <div class="form-group">
-                        <fieldset>
-                            <legend>Input type checkbox</legend>
-                            <label>
-                                <span>one</span>
-                                <input type="checkbox" checked>
-                            </label>
-                            <label>
-                                <span>two</span>
-                                <input type="checkbox">
-                            </label>
-                        </fieldset>
-                    </div>
-                    <div class="form-group">
-                        <label for="destiny">
-                            <select name="destiny" id="destiny">
-                                <option value="0" selected disabled>Choose your destiny</option>
-                                <option value="life">I'm new Khan</option>
-                                <option value="death">Take my soul</option>
-                            </select>
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <span>Input type date</span>
-                        <input type="date" name="" id="">
-                    </div>
-                    <div class="form-group">
-                        <span>Teaxtarea</span>
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
-                    </div>
-    
-                    <input type="submit" class="button _main-form">
+                        <br>
+                        <input type="email">
+                        <input type="tel" pattern="+7 [0-9]{3} ([0-9]{3}) [0-9]{2}-[0-9]{2}">
+                        <input type="file" accept="image/png, image/jpeg">
+                        <input type="hidden">
+                        <input type="text">
+                        <input type="number">
+                        <input type="password">
+                        <input type="range">
+                        <input type="search" name="q" placeholder="Find..">
+                        <input type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*" size="30">
+                    </fieldset>
+                    <fieldset>
+                        <legend>Form element</legend>
+                        <label for="textarea">This is textarea</label>
+                        <textarea name="" id="textarea" cols="30" rows="10"></textarea>
+                        <select id="characters" name="characters">
+                            <option value="default" selected>Choose a character:</option>
+                            <option value="scorp">Scorpion</option>
+                            <option value="subzero">Sub-zero</option>
+                            <option value="raiden">Raiden</option>
+                            <option value="sonya">Sonya</option>
+                        </select>
+                        <label for="cars">Choose a car:</label>
+                        <select name="cars" id="cars">
+                            <optgroup label="Swedish Cars">
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                            </optgroup>
+                            <optgroup label="German Cars">
+                                <option value="mercedes">Mercedes</option>
+                                <option value="audi">Audi</option>
+                            </optgroup>
+                        </select>
+                        <input list="browsers">
+                        <datalist id="browsers">
+                            <option value="Internet Explorer">
+                            <option value="Firefox">
+                            <option value="Chrome">
+                            <option value="Opera">
+                            <option value="Safari">
+                        </datalist>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Form buttons</legend>
+                        <button type="button">Click!</button>
+                        <input type="button" value="Input type 'Submit'">
+                        <input type="submit">
+                        <input type="reset">
+                        <input type="image" src="image.jpg" alt="Submit">
+                    </fieldset>
                 </form>
+            </div>
         </div>
     </main>
     <div id="sidebar">
        <section>
            <h2>Sidebar title one</h2>
-           <i>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab minima nam sed. <strong>Dignissimos commodi sequi eos placeat.</strong> Cumque, recusandae alias iste quasi ullam similique, illo mollitia eaque eius in nesciunt?</i>
            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas unde tempore rem, ex cum explicabo assumenda ducimus fugit. Ea rerum cumque, quasi fuga unde quaerat sapiente dolorum sint eaque magnam repellat sequi cupiditate beatae nihil debitis sunt, veritatis perferendis amet vel, nemo ut doloremque alias! Mollitia ullam nesciunt saepe praesentium?</p>
            <img src="https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=170667a&w=0&h=mRTFds0L_Hq63ohdqIdHXMrE32DqOnajt4I0yJ1bBtU=" alt="">
        </section>
        <section>
             <h2>Sidebar title two</h2>
            <p>Quaerat, veniam. Maxime vitae, provident natus illo quibusdam accusantium, quam alias ratione nihil enim nostrum dolorem dicta est quod eos odio quae consequatur iste vel odit sit adipisci. Repellat recusandae accusamus velit pariatur dicta minima sapiente tenetur amet illum necessitatibus, ipsam dignissimos harum placeat, beatae iusto provident voluptates facere itaque?</p>
-           <p>Sint nihil veniam facere tempore dolorem, <b>laboriosam laudantium libero quae cumque suscipit nostrum</b>, fugiat numquam repellendus nesciunt illo sed ducimus voluptates nemo? Earum, corrupti magni. Nostrum consequuntur tenetur quos nulla ullam voluptatum, nesciunt atque numquam magnam error ut quo, reiciendis culpa, quibusdam cumque eveniet cupiditate dolor sequi vitae. Aut, voluptates.</p>
+           <p>Sint nihil veniam facere tempore dolorem, laboriosam laudantium libero quae cumque suscipit nostrum, fugiat numquam repellendus nesciunt illo sed ducimus voluptates nemo? Earum, corrupti magni. Nostrum consequuntur tenetur quos nulla ullam voluptatum, nesciunt atque numquam magnam error ut quo, reiciendis culpa, quibusdam cumque eveniet cupiditate dolor sequi vitae. Aut, voluptates.</p>
            <img src="https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=170667a&w=0&h=mRTFds0L_Hq63ohdqIdHXMrE32DqOnajt4I0yJ1bBtU=" alt="">
            <img src="https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=170667a&w=0&h=mRTFds0L_Hq63ohdqIdHXMrE32DqOnajt4I0yJ1bBtU=" alt="">
-       </section>
+           <ol>
+               <li>list item</li>
+               <li>list item</li>
+               <li>list item</li>
+               <li>list item</li>
+               <li>list item</li>
+               <li>list item</li>
+           </ol>
+           <ul>
+               <li>list item</li>
+               <li>list item</li>
+               <li>list item</li>
+               <li>list item</li>
+               <li>list item</li>
+           </ul>
+        </section>
     </div>
 </body>
 </html>
