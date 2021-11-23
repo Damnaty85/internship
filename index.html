@@ -18,208 +18,334 @@
     <title>Internship to the company</title>
 </head>
 <body>
-    <header class="header">
-        <div class="logo _header">Logo</div>
-        <nav class="header__menu">
-            <ul>
-                <li><a href="/">Some link</a></li>
-                <li><a href="/">Some link</a></li>
-                <li><a href="/">Some link</a></li>
-                <li><a href="/">Some link</a></li>
-                <li><a href="/">Some link</a></li>
-                <li><a href="/">Some link</a></li>
-                <li><a href="/">Some link</a></li>
-            </ul>
-        </nav>
-        <div class="contacts _header">
-            <a href="tel:+79999999999">+7 (999) 999-99-99</a>
-            <a href="mailto:test@test.ru">test@test.ru</a>
-        </div>
-    </header>
-    <main class="main">
-        <div class="main__sidebar">
-            <article>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt tenetur, excepturi possimus praesentium a deserunt. Possimus, explicabo praesentium quisquam recusandae quo earum animi sit esse accusamus eligendi, id necessitatibus deserunt.</p>
-            </article>
-            <article>
-                <img src="https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=170667a&w=0&h=mRTFds0L_Hq63ohdqIdHXMrE32DqOnajt4I0yJ1bBtU=" alt="">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa aliquam fugiat repellendus quia id asperiores.</p>
-            </article>
-            <article>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab minima nam sed. Dignissimos commodi sequi eos placeat. Cumque, recusandae alias iste quasi ullam similique, illo mollitia eaque eius in nesciunt?</p>
-                <img src="https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=170667a&w=0&h=mRTFds0L_Hq63ohdqIdHXMrE32DqOnajt4I0yJ1bBtU=" alt="">
-            </article>
-        </div>
-        <div class="main__content">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Table head</th>
-                        <th>Table head</th>
-                        <th>Table head</th>
-                        <th>Table head</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                    </tr>
-                    <tr>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                    </tr>
-                    <tr>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                    </tr>
-                    <tr>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                    </tr>
-                </tfoot>
-            </table>
-            <div class="form">
-                <h2>Form</h2>
-                <form action="/" method="GET">
-                    <fieldset>
-                        <legend>Form input</legend>
-                        <label>checkbox1<input type="checkbox" name="value" value="1"></label>
-                        <label>checkbox2<input type="checkbox" name="value" value="2"></label>
-                        <label>checkbox3<input type="checkbox" name="value" value="3"></label>
-                        <label>checkbox4<input type="checkbox" name="value" value="4"></label>
-                        <br>
-                        <label>radio1<input type="radio" name="radio" value="1"></label>
-                        <label>radio2<input type="radio" name="radio" value="2"></label>
-                        <label>radio3<input type="radio" name="radio" value="3"></label>
-                        <label>radio4<input type="radio" name="radio" value="4"></label>
-                        <br>
-                        <input type="color">
-                        <br>
-                        <label>
-                            <span>Date input</span>
-                            <input type="date" value="2018-07-22" min="2018-01-01" max="2018-12-31">
-                            <input id="datetime" type="datetime-local">
-                            <input type="time" min="09:00" max="18:00">
-                            <input type="week" name="week" min="2018-W18" max="2018-W26">
-                            <input type="month" min="2018-03" value="2018-05">
-                        </label>
-                        <br>
-                        <input type="email">
-                        <input type="tel" pattern="+7 [0-9]{3} ([0-9]{3}) [0-9]{2}-[0-9]{2}">
-                        <input type="file" accept="image/png, image/jpeg">
-                        <input type="hidden">
-                        <input type="text">
-                        <input type="number">
-                        <input type="password">
-                        <input type="range">
-                        <input type="search" name="q" placeholder="Find..">
-                        <input type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*" size="30">
-                    </fieldset>
-                    <fieldset>
-                        <legend>Form element</legend>
-                        <label for="textarea">This is textarea</label>
-                        <textarea name="" id="textarea" cols="30" rows="10"></textarea>
-                        <select id="characters" name="characters">
-                            <option value="default" selected>Choose a character:</option>
-                            <option value="scorp">Scorpion</option>
-                            <option value="subzero">Sub-zero</option>
-                            <option value="raiden">Raiden</option>
-                            <option value="sonya">Sonya</option>
-                        </select>
-                        <label for="mkchars">Choose a character:</label>
-                        <select name="mkchars" id="mkchars">
-                            <optgroup label="Good">
-                                <option value="scorp">Scorpion</option>
-                                <option value="sonya">Sonya</option>
-                            </optgroup>
-                            <optgroup label="Bad">
-                                <option value="sub">Sub-zero</option>
-                                <option value="motaro">Motaro</option>
-                            </optgroup>
-                        </select>
-                        <input list="browsers">
-                        <datalist id="browsers">
-                            <option value="Internet Explorer">
-                            <option value="Firefox">
-                            <option value="Chrome">
-                            <option value="Opera">
-                            <option value="Safari">
-                        </datalist>
-                    </fieldset>
-                    <fieldset>
-                        <legend>Form buttons</legend>
-                        <button type="button">Click!</button>
-                        <input type="button" value="Input type 'Submit'">
-                        <input type="submit">
-                        <input type="reset">
-                        <input type="image" src="https://www.pngplay.com/wp-content/uploads/1/Button-PNG-Royalty-Free-High-Quality.png" alt="Submit">
-                    </fieldset>
-                </form>
-            </div>
-        </div>
-    </main>
-    <aside>
-        <section>
-            <h2>Sidebar title one</h2>
-            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. <button>here is button</button>  Quia hic veritatis illum exercitationem suscipit rem non, porro aspernatur esse laudantium.</span>
-            <p>Lorem <em>ipsum dolor sit amet consectetur</em>, adipisicing elit. Voluptas unde tempore rem, ex cum explicabo assumenda ducimus fugit. Ea rerum cumque, quasi fuga unde quaerat sapiente dolorum sint eaque magnam repellat sequi cupiditate beatae nihil debitis sunt, veritatis perferendis amet vel, nemo ut doloremque alias! Mollitia ullam nesciunt saepe praesentium?</p>
-            <img src="https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=170667a&w=0&h=mRTFds0L_Hq63ohdqIdHXMrE32DqOnajt4I0yJ1bBtU=" alt="">
-        </section>
-        <label for="readMore" class="read-more">Read More</label>
-        <input type="checkbox" id="readMore">
-        <section>
-             <h2>Sidebar title two</h2>
-            <p>Quaerat, veniam. <i>Maxime vitae, provident natus illo quibusdam</i> accusantium, quam alias ratione nihil enim nostrum dolorem dicta est quod eos odio quae consequatur iste vel odit sit adipisci. Repellat recusandae accusamus velit pariatur dicta minima sapiente tenetur amet illum necessitatibus, ipsam dignissimos harum placeat, beatae iusto provident voluptates facere itaque?</p>
-            <p>Sint nihil veniam facere tempore dolorem, laboriosam laudantium libero <b>quae cumque suscipit nostrum</b>, fugiat numquam repellendus nesciunt illo sed ducimus voluptates nemo? Earum, corrupti magni. Nostrum consequuntur tenetur quos nulla ullam voluptatum, nesciunt atque numquam magnam error ut quo, reiciendis culpa, quibusdam cumque eveniet cupiditate dolor sequi vitae. Aut, voluptates.</p>
-            <img src="https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=170667a&w=0&h=mRTFds0L_Hq63ohdqIdHXMrE32DqOnajt4I0yJ1bBtU=" alt="">
-            <img src="https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=170667a&w=0&h=mRTFds0L_Hq63ohdqIdHXMrE32DqOnajt4I0yJ1bBtU=" alt="">
-            <div class="lists">
-                <ol>
-                    <li>list item</li>
-                    <li>list item</li>
-                    <li>list item</li>
-                    <li>list item</li>
-                    <li>list item</li>
-                    <li>list item</li>
-                </ol>
+    <div class="container">
+        <header class="header">
+            <div class="logo _header">Logo</div>
+            <nav class="header__menu">
                 <ul>
-                    <li>list item</li>
-                    <li>list item</li>
-                    <li>list item</li>
-                    <li>list item</li>
-                    <li>list item</li>
+                    <li><a href="/">Some link</a></li>
+                    <li><a href="/">Some link</a></li>
+                    <li><a href="/">Some link</a></li>
+                    <li><a href="/">Some link</a></li>
+                    <li><a href="/">Some link</a></li>
+                    <li><a href="/">Some link</a></li>
+                    <li><a href="/">Some link</a></li>
                 </ul>
+            </nav>
+            <div class="contacts _header">
+                <a href="tel:+79999999999">+7 (999) 999-99-99</a>
+                <a href="mailto:test@test.ru">test@test.ru</a>
             </div>
-         </section>
-    </aside>
-    <!-- <table>
+        </header>
+        <main class="main">
+            <div class="main__sidebar">
+                <article>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt tenetur, excepturi possimus praesentium a deserunt. Possimus, explicabo praesentium quisquam recusandae quo earum animi sit esse accusamus eligendi, id necessitatibus deserunt.</p>
+                </article>
+                <article>
+                    <img src="https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=170667a&w=0&h=mRTFds0L_Hq63ohdqIdHXMrE32DqOnajt4I0yJ1bBtU=" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa aliquam fugiat repellendus quia id asperiores.</p>
+                </article>
+                <article>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab minima nam sed. Dignissimos commodi sequi eos placeat. Cumque, recusandae alias iste quasi ullam similique, illo mollitia eaque eius in nesciunt?</p>
+                    <img src="https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=170667a&w=0&h=mRTFds0L_Hq63ohdqIdHXMrE32DqOnajt4I0yJ1bBtU=" alt="">
+                </article>
+            </div>
+            <div class="main__content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Table head</th>
+                            <th>Table head</th>
+                            <th>Table head</th>
+                            <th>Table head</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                        </tr>
+                        <tr>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                        </tr>
+                        <tr>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                        </tr>
+                        <tr>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <div class="form">
+                    <h2>Form</h2>
+                    <form action="/" method="GET">
+                        <fieldset>
+                            <legend>Form input</legend>
+                            <label>checkbox1<input type="checkbox" name="value" value="1"></label>
+                            <label>checkbox2<input type="checkbox" name="value" value="2"></label>
+                            <label>checkbox3<input type="checkbox" name="value" value="3"></label>
+                            <label>checkbox4<input type="checkbox" name="value" value="4"></label>
+                            <br>
+                            <label>radio1<input type="radio" name="radio" value="1"></label>
+                            <label>radio2<input type="radio" name="radio" value="2"></label>
+                            <label>radio3<input type="radio" name="radio" value="3"></label>
+                            <label>radio4<input type="radio" name="radio" value="4"></label>
+                            <br>
+                            <input type="color">
+                            <br>
+                            <label>
+                                <span>Date input</span>
+                                <input type="date" value="2018-07-22" min="2018-01-01" max="2018-12-31">
+                                <input id="datetime" type="datetime-local">
+                                <input type="time" min="09:00" max="18:00">
+                                <input type="week" name="week" min="2018-W18" max="2018-W26">
+                                <input type="month" min="2018-03" value="2018-05">
+                            </label>
+                            <br>
+                            <input type="email">
+                            <input type="tel" pattern="+7 [0-9]{3} ([0-9]{3}) [0-9]{2}-[0-9]{2}">
+                            <input type="file" accept="image/png, image/jpeg">
+                            <input type="hidden">
+                            <input type="text">
+                            <input type="number">
+                            <input type="password">
+                            <input type="range">
+                            <input type="search" name="q" placeholder="Find..">
+                            <input type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*" size="30">
+                        </fieldset>
+                        <fieldset>
+                            <legend>Form element</legend>
+                            <label for="textarea">This is textarea</label>
+                            <textarea name="" id="textarea" cols="30" rows="10"></textarea>
+                            <select id="characters" name="characters">
+                                <option value="default" selected>Choose a character:</option>
+                                <option value="scorp">Scorpion</option>
+                                <option value="subzero">Sub-zero</option>
+                                <option value="raiden">Raiden</option>
+                                <option value="sonya">Sonya</option>
+                            </select>
+                            <label for="mkchars">Choose a character:</label>
+                            <select name="mkchars" id="mkchars">
+                                <optgroup label="Good">
+                                    <option value="scorp">Scorpion</option>
+                                    <option value="sonya">Sonya</option>
+                                </optgroup>
+                                <optgroup label="Bad">
+                                    <option value="sub">Sub-zero</option>
+                                    <option value="motaro">Motaro</option>
+                                </optgroup>
+                            </select>
+                            <input list="browsers">
+                            <datalist id="browsers">
+                                <option value="Internet Explorer">
+                                <option value="Firefox">
+                                <option value="Chrome">
+                                <option value="Opera">
+                                <option value="Safari">
+                            </datalist>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Form buttons</legend>
+                            <button type="button">Click!</button>
+                            <input type="button" value="Input type 'Submit'">
+                            <input type="submit">
+                            <input type="reset">
+                            <input type="image" src="https://www.pngplay.com/wp-content/uploads/1/Button-PNG-Royalty-Free-High-Quality.png" alt="Submit">
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <aside>
+            <section>
+                <h2>Sidebar title one</h2>
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. <button>here is button</button>  Quia hic veritatis illum exercitationem suscipit rem non, porro aspernatur esse laudantium.</span>
+                <p>Lorem <em>ipsum dolor sit amet consectetur</em>, adipisicing elit. Voluptas unde tempore rem, ex cum explicabo assumenda ducimus fugit. Ea rerum cumque, quasi fuga unde quaerat sapiente dolorum sint eaque magnam repellat sequi cupiditate beatae nihil debitis sunt, veritatis perferendis amet vel, nemo ut doloremque alias! Mollitia ullam nesciunt saepe praesentium?</p>
+                <img src="https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=170667a&w=0&h=mRTFds0L_Hq63ohdqIdHXMrE32DqOnajt4I0yJ1bBtU=" alt="">
+            </section>
+            <label for="readMore" class="read-more">Read More</label>
+            <input type="checkbox" id="readMore">
+            <section>
+                 <h2>Sidebar title two</h2>
+                <p>Quaerat, veniam. <i>Maxime vitae, provident natus illo quibusdam</i> accusantium, quam alias ratione nihil enim nostrum dolorem dicta est quod eos odio quae consequatur iste vel odit sit adipisci. Repellat recusandae accusamus velit pariatur dicta minima sapiente tenetur amet illum necessitatibus, ipsam dignissimos harum placeat, beatae iusto provident voluptates facere itaque?</p>
+                <p>Sint nihil veniam facere tempore dolorem, laboriosam laudantium libero <b>quae cumque suscipit nostrum</b>, fugiat numquam repellendus nesciunt illo sed ducimus voluptates nemo? Earum, corrupti magni. Nostrum consequuntur tenetur quos nulla ullam voluptatum, nesciunt atque numquam magnam error ut quo, reiciendis culpa, quibusdam cumque eveniet cupiditate dolor sequi vitae. Aut, voluptates.</p>
+                <img src="https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=170667a&w=0&h=mRTFds0L_Hq63ohdqIdHXMrE32DqOnajt4I0yJ1bBtU=" alt="">
+                <img src="https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=170667a&w=0&h=mRTFds0L_Hq63ohdqIdHXMrE32DqOnajt4I0yJ1bBtU=" alt="">
+                <div class="lists">
+                    <ol>
+                        <li>list item</li>
+                        <li>list item</li>
+                        <li>list item</li>
+                        <li>list item</li>
+                        <li>list item</li>
+                        <li>list item</li>
+                    </ol>
+                    <ul>
+                        <li>list item</li>
+                        <li>list item</li>
+                        <li>list item</li>
+                        <li>list item</li>
+                        <li>list item</li>
+                    </ul>
+                </div>
+             </section>
+        </aside>
+    </div>
+    <table class="table">
         <tbody>
             <tr>
-                <td colspan="4"></td>
-                <td rowspan="2"></td>
+                <td colspan="4">
+                    <div class="logo _header">Logo</div>
+                    <nav class="header__menu">
+                        <ul>
+                            <li><a href="/">Some link</a></li>
+                            <li><a href="/">Some link</a></li>
+                            <li><a href="/">Some link</a></li>
+                            <li><a href="/">Some link</a></li>
+                            <li><a href="/">Some link</a></li>
+                            <li><a href="/">Some link</a></li>
+                            <li><a href="/">Some link</a></li>
+                        </ul>
+                    </nav>
+                    <div class="contacts _header">
+                        <a href="tel:+79999999999">+7 (999) 999-99-99</a>
+                        <a href="mailto:test@test.ru">test@test.ru</a>
+                    </div>
+                </td>
+                <td rowspan="3">
+                    <section>
+                        <h2>Sidebar title one</h2>
+                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. <button>here is button</button>  Quia hic veritatis illum exercitationem suscipit rem non, porro aspernatur esse laudantium.</span>
+                        <p>Lorem <em>ipsum dolor sit amet consectetur</em>, adipisicing elit. Voluptas unde tempore rem, ex cum explicabo assumenda ducimus fugit. Ea rerum cumque, quasi fuga unde quaerat sapiente dolorum sint eaque magnam repellat sequi cupiditate beatae nihil debitis sunt, veritatis perferendis amet vel, nemo ut doloremque alias! Mollitia ullam nesciunt saepe praesentium?</p>
+                        <img src="https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=170667a&w=0&h=mRTFds0L_Hq63ohdqIdHXMrE32DqOnajt4I0yJ1bBtU=" alt="">
+                    </section>
+                    <label for="readMore" class="read-more">Read More</label>
+                    <input type="checkbox" id="readMore">
+                    <section>
+                         <h2>Sidebar title two</h2>
+                        <p>Quaerat, veniam. <i>Maxime vitae, provident natus illo quibusdam</i> accusantium, quam alias ratione nihil enim nostrum dolorem dicta est quod eos odio quae consequatur iste vel odit sit adipisci. Repellat recusandae accusamus velit pariatur dicta minima sapiente tenetur amet illum necessitatibus, ipsam dignissimos harum placeat, beatae iusto provident voluptates facere itaque?</p>
+                        <p>Sint nihil veniam facere tempore dolorem, laboriosam laudantium libero <b>quae cumque suscipit nostrum</b>, fugiat numquam repellendus nesciunt illo sed ducimus voluptates nemo? Earum, corrupti magni. Nostrum consequuntur tenetur quos nulla ullam voluptatum, nesciunt atque numquam magnam error ut quo, reiciendis culpa, quibusdam cumque eveniet cupiditate dolor sequi vitae. Aut, voluptates.</p>
+                        <img src="https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=170667a&w=0&h=mRTFds0L_Hq63ohdqIdHXMrE32DqOnajt4I0yJ1bBtU=" alt="">
+                        <img src="https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=170667a&w=0&h=mRTFds0L_Hq63ohdqIdHXMrE32DqOnajt4I0yJ1bBtU=" alt="">
+                     </section>
+                </td>
             </tr>
             <tr>
-                <td></td>
-                <td colspan="3"></td>
+                <td>
+                    <article>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt tenetur, excepturi possimus praesentium a deserunt. Possimus, explicabo praesentium quisquam recusandae quo earum animi sit esse accusamus eligendi, id necessitatibus deserunt.</p>
+                    </article>
+                    <article>
+                        <img src="https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=170667a&w=0&h=mRTFds0L_Hq63ohdqIdHXMrE32DqOnajt4I0yJ1bBtU=" alt="">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa aliquam fugiat repellendus quia id asperiores.</p>
+                    </article>
+                    <article>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab minima nam sed. Dignissimos commodi sequi eos placeat. Cumque, recusandae alias iste quasi ullam similique, illo mollitia eaque eius in nesciunt?</p>
+                        <img src="https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=170667a&w=0&h=mRTFds0L_Hq63ohdqIdHXMrE32DqOnajt4I0yJ1bBtU=" alt="">
+                    </article>
+                </td>
+                <td colspan="3">
+                    <div class="form">
+                        <h2>Form</h2>
+                        <form action="/" method="GET">
+                            <fieldset>
+                                <legend>Form input</legend>
+                                <label>checkbox1<input type="checkbox" name="value" value="1"></label>
+                                <label>checkbox2<input type="checkbox" name="value" value="2"></label>
+                                <label>checkbox3<input type="checkbox" name="value" value="3"></label>
+                                <label>checkbox4<input type="checkbox" name="value" value="4"></label>
+                                <br>
+                                <label>radio1<input type="radio" name="radio" value="1"></label>
+                                <label>radio2<input type="radio" name="radio" value="2"></label>
+                                <label>radio3<input type="radio" name="radio" value="3"></label>
+                                <label>radio4<input type="radio" name="radio" value="4"></label>
+                                <br>
+                                <input type="color">
+                                <br>
+                                <label>
+                                    <span>Date input</span>
+                                    <input type="date" value="2018-07-22" min="2018-01-01" max="2018-12-31">
+                                    <input id="datetime" type="datetime-local">
+                                    <input type="time" min="09:00" max="18:00">
+                                    <input type="week" name="week" min="2018-W18" max="2018-W26">
+                                    <input type="month" min="2018-03" value="2018-05">
+                                </label>
+                                <br>
+                                <input type="email">
+                                <input type="tel" pattern="+7 [0-9]{3} ([0-9]{3}) [0-9]{2}-[0-9]{2}">
+                                <input type="file" accept="image/png, image/jpeg">
+                                <input type="hidden">
+                                <input type="text">
+                                <input type="number">
+                                <input type="password">
+                                <input type="range">
+                                <input type="search" name="q" placeholder="Find..">
+                                <input type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*" size="30">
+                            </fieldset>
+                            <fieldset>
+                                <legend>Form element</legend>
+                                <label for="textarea">This is textarea</label>
+                                <textarea name="" id="textarea" cols="30" rows="10"></textarea>
+                                <select id="characters" name="characters">
+                                    <option value="default" selected>Choose a character:</option>
+                                    <option value="scorp">Scorpion</option>
+                                    <option value="subzero">Sub-zero</option>
+                                    <option value="raiden">Raiden</option>
+                                    <option value="sonya">Sonya</option>
+                                </select>
+                                <label for="mkchars">Choose a character:</label>
+                                <select name="mkchars" id="mkchars">
+                                    <optgroup label="Good">
+                                        <option value="scorp">Scorpion</option>
+                                        <option value="sonya">Sonya</option>
+                                    </optgroup>
+                                    <optgroup label="Bad">
+                                        <option value="sub">Sub-zero</option>
+                                        <option value="motaro">Motaro</option>
+                                    </optgroup>
+                                </select>
+                                <input list="browsers">
+                                <datalist id="browsers">
+                                    <option value="Internet Explorer">
+                                    <option value="Firefox">
+                                    <option value="Chrome">
+                                    <option value="Opera">
+                                    <option value="Safari">
+                                </datalist>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Form buttons</legend>
+                                <button type="button">Click!</button>
+                                <input type="button" value="Input type 'Submit'">
+                                <input type="submit">
+                                <input type="reset">
+                                <input type="image" src="https://www.pngplay.com/wp-content/uploads/1/Button-PNG-Royalty-Free-High-Quality.png" alt="Submit">
+                            </fieldset>
+                        </form>
+                    </div>
+                </td>
             </tr>
         </tbody>
-    </table> -->
+    </table>
 </body>
 </html>
