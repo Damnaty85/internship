@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {name: 'multiply', value: '*'},
         {name: 'degree', value: '/'},
         {name: 'to the extent', value: '**'},
-        {name: 'emainder of the division', value: '%'},
+        {name: 'remainder of the division', value: '%'},
         {name: 'square root of', value: '1/2'},
         {name: 'cubic root of', value: '1/3'},
     ]
@@ -109,7 +109,7 @@ function findingAction(a, b, expression) {
             if (isFinite(result)) {
                 return result
             } else {
-                throw new SyntaxError('Invalid data type "'+ result);
+                throw new SyntaxError('Invalid data type "'+ result +'"');
             }
         } catch(err) {
             if (err.name === "SyntaxError") {
