@@ -325,87 +325,48 @@ form label:nth-of-type(-n+8) input {
   height: auto;
 }
 
-#app {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 25px 40px 30px 30px;
-  grid-column-gap: 20px;
-  grid-row-gap: 10px;
-  align-items: center;
-  justify-content: flex-start;
-  max-width: 500px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 40px;
-  box-shadow: 1px 2px 4px 2px #adadad;
-  border-radius: 3px;
-  margin-top: 20px;
-}
-#app .error {
-  grid-column: span 3;
-  grid-row: 1;
-}
-#app .equal {
-  grid-column: span 3;
-  text-align: center;
-}
-#app input[type=text] {
-  height: 100%;
-  font-size: 1.2rem;
-  padding: 0 5px;
-  width: 100%;
-  border: 1px solid black;
-  border-radius: 5px;
-}
-#app input[type=text]._selected {
-  border-color: mediumseagreen;
-}
-#app input[type=text]._error {
-  border-color: red;
-}
-#app select {
-  width: 100%;
-  height: 100%;
-  padding: 0 5px;
-}
-#app .save {
-  border: none;
-  background-color: #ffffff;
-  height: 100%;
-  border-radius: 4px;
-  box-shadow: 0px 1px 1px 1px #b9b9b9;
+body {
+  background-color: #121212;
 }
 
-.external-script {
-  max-width: 600px;
+#app {
+  margin: 40px auto;
+  max-width: 1400px;
   width: 100%;
-  height: 100px;
-  margin: 50px auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 2em;
+  grid-template-columns: repeat(auto-fit, minmax(calc(100%/4 - 1em), 1fr));
+  gap: 1em;
 }
-.external-script__item {
-  border: 1px solid darkgrey;
-  border-radius: 5px;
+
+.film-card {
+  background-color: #121212;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+}
+.film-card__info ul {
+  display: flex;
+  list-style: none;
+  font-size: 13px;
+}
+.film-card__poster {
+  width: 100%;
+  height: 500px;
+  margin: 20px 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
 }
-.external-script__item._mouseenter {
-  background-color: lightgreen;
-}
-.external-script__item._clickable {
-  background-color: lightsalmon;
-}
-.external-script__item._input-focus {
-  background-color: lightseagreen;
-}
-.external-script__item input {
+.film-card__poster img {
   width: 100%;
-  height: 45px;
-  padding: 0 5px;
+  height: 100%;
+  object-fit: cover;
+}
+.film-card__description {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 1280px) {
