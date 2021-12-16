@@ -341,18 +341,38 @@ body {
 .film-card {
   background-color: #121212;
   border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 2px;
   color: rgba(255, 255, 255, 0.7);
-  padding: 20px;
+  padding: 0;
+}
+.film-card__header {
+  padding: 15px 15px 0;
+}
+.film-card__footer {
+  padding: 0 15px 15px;
+}
+.film-card__title {
+  font-weight: 600;
+  margin-bottom: 5px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+.film-card__info {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+.film-card__info span {
+  margin-right: 10px;
 }
 .film-card__info ul {
   display: flex;
   list-style: none;
-  font-size: 13px;
 }
 .film-card__poster {
   width: 100%;
   height: 500px;
-  margin: 20px 0;
+  margin: 5px 0;
   display: flex;
   align-items: center;
   justify-content: center;
