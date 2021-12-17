@@ -1,12 +1,12 @@
-import {TITLE, POSTERS, DESCRIPTION, GENRES, ACTORS} from "./const.js"
+import { TITLE, POSTERS, DESCRIPTION, GENRES, ACTORS } from "./const.js"
 
-document.addEventListener('DOMContentLoaded', function() {
-    const TOTAL_FILM = 100;
+document.addEventListener('DOMContentLoaded', function () {
+    const TOTAL_FILM = 60;
     const FILM_ON_PAGE = 20;
     const SHOWING_MORE = 10
 
     const app = document.querySelector('#app');
-    const end = document.getElementById('endofscreen')
+    const endOfList = document.getElementById('endofscreen')
 
     const getRandomBoolean = () => (Math.random() > 0.5);
 
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const getRandomArrayItem = (array) => {
         const randomIndex = getRandomIntegerNumber(0, array.length);
-      
+
         return array[randomIndex];
     };
 
@@ -37,14 +37,14 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     const createFilmCardTemplate = (card) => {
-        const {title, poster, description, genres, actors} = card;
+        const { title, poster, description, genres, actors } = card;
 
         const listItemTemplate = function (array) {
             return `
                 <span>
                     ${array.map((it) => {
-                        return `${it}`
-                    }).join(', ')}
+                return `${it}`
+            }).join(', ')}
                 </span>
             `
         }
@@ -53,13 +53,12 @@ document.addEventListener('DOMContentLoaded', function() {
             <article class="film-card">
                 <div class="film-card__header">
                     <h3 class="film-card__title">${title}</h3>
-                    ${
-                        genres.length !== 0 ?
-                            `<div class="film-card__info">
+                    ${genres.length !== 0 ?
+                `<div class="film-card__info">
                                 <span>Genres: </span>
                                 ${listItemTemplate(genres)}
                             </div>` : ``
-                    }
+            }
                 </div>
                 <div class="film-card__body">
                     <div class="film-card__poster">
@@ -67,13 +66,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
                 <div class="film-card__footer">
-                    ${
-                        genres.length !== 0 ?
-                            `<div class="film-card__info">
+                    ${genres.length !== 0 ?
+                `<div class="film-card__info">
                                 <span>Actors: </span>
                                 ${listItemTemplate(actors)}
                             </div>` : ``
-                    }
+            }
                     <p class="film-card__description">${description}</p>
                 </div>
             </article>
@@ -83,29 +81,29 @@ document.addEventListener('DOMContentLoaded', function() {
     const createElement = (template) => {
         const newElement = document.createElement(`div`);
         newElement.innerHTML = template;
-      
+
         return newElement;
     };
 
     class AbstractComponent {
         constructor() {
-          this._element = null;
+            this._element = null;
         }
-      
+
         getTemplate() {
-          throw new Error(`Abstract method not implemented: getTemplate`);
+            throw new Error(`Abstract method not implemented: getTemplate`);
         }
-      
+
         getElement() {
-          if (!this._element) {
-            this._element = createElement(this.getTemplate());
-          }
-      
-          return this._element;
+            if (!this._element) {
+                this._element = createElement(this.getTemplate());
+            }
+
+            return this._element;
         }
     }
 
-    class Card extends AbstractComponent{
+    class Card extends AbstractComponent {
         constructor(card) {
             super();
 
@@ -117,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         set card(value) {
-            if(typeof value !== "undefined") {
+            if (typeof value !== "undefined") {
                 Object.values(value).forEach((it) => {
                     if (typeof it !== "string" && !Array.isArray(it)) {
                         throw new Error("Не верный тип данных")
@@ -147,37 +145,57 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    if(localStorage.getItem("films")) {
-        dataFilm = JSON.parse(localStorage.getItem('films'))
-        renderFilms(dataFilm)
-    } else {
-        localStorage.setItem('films', JSON.stringify(generateCards(TOTAL_FILM)))
-        dataFilm = JSON.parse(localStorage.getItem('films'))
-        renderFilms(dataFilm)
+    function getCookie(name) {
+        const matches = document.cookie.match(new RegExp(
+            "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+        ));
+        return matches ? decodeURIComponent(matches[1]) : undefined;
     }
+
+    function checkAuthorization() {
+        if (getCookie("user") === "isAuth") {
+            if (localStorage.getItem("films")) {
+                dataFilm = JSON.parse(localStorage.getItem('films'))
+                renderFilms(dataFilm)
+            } else {
+                localStorage.setItem('films', JSON.stringify(generateCards(TOTAL_FILM)))
+                dataFilm = JSON.parse(localStorage.getItem('films'))
+                renderFilms(dataFilm)
+            }
+        } else {
+            alert("You must be logged in. Click OK to continue.");
+            const name = prompt('Enter you name please');
+            document.cookie = "user=isAuth; path=/; max-age=3600"
+            checkAuthorization();
+            alert(`Great ${name}, you are logged in and now you can continue browsing the base.`)
+        }
+    }
+
+    checkAuthorization();
 
     const observer = new IntersectionObserver(entries => {
         const firstEntry = entries[0];
         if (firstEntry.isIntersecting) {
             const prevTasksCount = showingFilmsCount;
             showingFilmsCount = showingFilmsCount + SHOWING_MORE;
-            try{
+            try {
                 if (showingFilmsCount >= dataFilm.length) {
-                    throw new Error('End of list, try again later')
+                    throw new Error('Looks like that\'s all, please try again later')
                 } else {
                     dataFilm.slice(prevTasksCount, showingFilmsCount).forEach((film) => {
                         renderFilm(film)
                     });
                 }
-            } catch(err) {
-                if(err.name === 'Error') {
+            } catch (err) {
+                if (err.name === 'Error') {
                     alert(err.message)
+                    endOfList.remove();
                 }
             }
         }
-    }, {rootMargin: '100px'});
+    }, { rootMargin: '100px' });
 
-    observer.observe(end);
+    observer.observe(endOfList);
 
 })
 
