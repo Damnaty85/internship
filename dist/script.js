@@ -176,13 +176,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const observer = new IntersectionObserver(entries => {
         const firstEntry = entries[0];
         if (firstEntry.isIntersecting) {
-            const prevTasksCount = showingFilmsCount;
+            const prevFilmsCount = showingFilmsCount;
             showingFilmsCount = showingFilmsCount + SHOWING_MORE;
             try {
                 if (showingFilmsCount >= dataFilm.length) {
                     throw new Error('Looks like that\'s all, please try again later')
                 } else {
-                    dataFilm.slice(prevTasksCount, showingFilmsCount).forEach((film) => {
+                    dataFilm.slice(prevFilmsCount, showingFilmsCount).forEach((film) => {
                         renderFilm(film)
                     });
                 }
