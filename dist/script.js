@@ -62,37 +62,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.querySelector("input[type=\"search\"]")
     const result = document.getElementById("result");
 
-    async function getUsers(query, per_page = 50) {
-        let users = [];
+    async function fetchData(query, pathname) {
+        let responseData = [];
         if(!query) {
             return false;
         }
-        await fetch(`${BASE_URL}/search/users?q=${query}&per_page=${per_page}`, {
-            headers: {
-                'User-Agent': 'request'
-            }})
-            .then(response => {
-                result.innerHTML = 'Waiting for response...';
-                if(response.ok) {
-                    return response;
-                } throw Error(response.statusText);
-            })
-            .then( response => response.json() )
-            .then( data => {
-                users = data.items
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
-        return users
-    }
-
-    async function getUser(query) {
-        let user = {};
-        if(!query) {
-            return false;
-        }
-        await fetch(`${BASE_URL}/users/${query}`, {
+        await fetch(`${BASE_URL}${pathname}${query}`, {
             headers: {
                 'User-Agent': 'request'
             }})
@@ -103,31 +78,20 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             .then( response => response.json() )
             .then( data => {
-                user = data
+                responseData = data
             })
             .catch((error) => {
                 console.error('Error:', error);
             });
-        return user
+        return responseData
     }
-
-    function* pageIterator() {
-        let index = 0;
-        while (index < 3)
-            yield index++;
-    }
-
-    let pageNumber = pageIterator();
 
     async function renderUserList(query) {
-        const users = await getUsers(query);
+        const users = await fetchData(query, `/search/users?q=`);
         if(!users) return false;
         result.innerHTML = '';
-        
-        // result.insertAdjacentHTML('afterend', `<div class="endofscreen"></div>`)
-        // const end = document.getElementById('endofscreen')
 
-        users.map(user => {
+        users.items.map(user => {
             const {login, id, html_url, avatar_url} = user;
             return result.insertAdjacentHTML('beforeend', usersListItemTemplate(id, avatar_url, login, html_url))
         })
@@ -141,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
             item.querySelector('.user__detail').addEventListener('click', function() {
                 const userLogin = item.querySelector(".user__login").textContent;
                 (async () => {
-                    const thisUser = await getUser(userLogin)
+                    const thisUser = await fetchData(userLogin, `/users/`)
                     if(document.querySelector(".user-detail")) {
                         document.querySelector(".user-detail").remove();
                     }
@@ -166,12 +130,11 @@ document.addEventListener("DOMContentLoaded", () => {
         };
     };
 
-    const test = debounce(function(value){
+    const resist = debounce(function(value){
         renderUserList(value);
     }, 300)
 
     searchInput.addEventListener('input', function() {
-        test(this.value)
+        resist(this.value)
     })
 })
-
