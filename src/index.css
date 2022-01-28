@@ -344,7 +344,7 @@ body {
   color: grey;
 }
 
-#result {
+.result {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: flex-start;
@@ -393,6 +393,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding-top: 10px;
 }
 .user__button-wrap a {
   margin-bottom: 15px;
@@ -400,11 +401,14 @@ body {
 }
 .user__detail {
   border: none;
-  padding: 5px 10px;
+  padding: 10px;
   width: calc(100% - 15px);
   color: white;
   background-color: #121212;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .user-detail {
   position: fixed;
