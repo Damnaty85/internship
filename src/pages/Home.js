@@ -1,62 +1,29 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Search from '../components/Search';
 import Result from '../components/Result';
+import useFetch from '../customHook/useFetch';
 
 const BASE_URL = `https://api.github.com`;
 
-class Home extends Component {
-    constructor() {
-        super();
-        this.state = {
-            responseData: [],
-            query: ""
-        }
+export default function Home() {
+    const [ responseData, setResponseData ] = useState([]);
+    const [ query, setQuery ] = useState("")
+    const { response } = useFetch(`${BASE_URL}/search/users?q=`, `${query}`);
 
-        this.handleSearchSubmit = this.handleSearchSubmit.bind(this)
-        this.handleChange = this.handleChange.bind(this)
+    const handleChange = (evt) => {
+        setQuery(evt.target.value)
     }
 
-    handleChange(evt) {
-        this.setState({
-            query: evt.target.value
-        })
-    }
-
-    async handleSearchSubmit(evt) {
+    const handleSearchSubmit = async (evt) => {
         evt.preventDefault();
         
-        if(!this.state.query) {
-            return false;
-        }
-
-	    await fetch(`${BASE_URL}/search/users?q=${this.state.query}`, {
-            headers: {
-                'User-Agent': 'request'
-            }})
-            .then(response => {
-			    if(response.ok) {
-				    return response;
-			    } throw Error(response.statusText);
-		    })
-		    .then( response => response.json() )
-		    .then( data => {
-                this.setState({
-                    responseData: data
-                })
-		    })
-		    .catch((error) => {
-			    console.error('Error:', error);
-		    });
+        setResponseData(response)
     }
 
-    render() {
-        return (
-            <>
-                <Search handleSearchSubmit={this.handleSearchSubmit} handleChange={this.handleChange}/>
-			    <Result data={this.state.responseData} />
-            </>
-        );
-    }
+    return (
+        <>
+            <Search handleSearchSubmit={handleSearchSubmit} handleChange={handleChange}/>
+            <Result data={responseData} />
+        </>
+    )
 }
-
-export default Home;
