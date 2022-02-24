@@ -3,7 +3,7 @@ interface IFunctionProps {
   handleSearchSubmit: (evt: any) => void
 }
 
-const Search: React.FC<IFunctionProps> = ({handleChange, handleSearchSubmit}) => {
+const Search = ({handleChange, handleSearchSubmit}: IFunctionProps) => {
   return (
     <>
         <form onSubmit={handleSearchSubmit}>

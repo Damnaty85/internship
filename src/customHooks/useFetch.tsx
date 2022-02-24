@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react"
 
 const useFetch = (url: string, query: string) => {
-    const [response, setResponse] = useState([])
+    const [response, setResponse] = useState<object>({})
 
     const fetchData = useCallback(
         async () => {

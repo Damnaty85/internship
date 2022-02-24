@@ -1,15 +1,18 @@
 import UserList from './UserList';
 import { IUserProps } from "../type/type";
 
-type IArrayProp = {
-    items: IUserProps[]
+interface IArrayProp {
+    items?: IUserProps[]
 }
 
 interface IDataProps {
     data: IArrayProp
 }
 
-const Result: React.FC<IDataProps> = ({data}) => {
+const Result = ({data}: IDataProps) => {
+    if (!data.items) {
+        return null;
+    }
     return (
         <div className="result">
             {
