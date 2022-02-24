@@ -12,8 +12,7 @@ interface IUserLoginProp {
 const UserDetail = ({userLogin}: IUserLoginProp) => {
     const navigate = useNavigate();
     const { response } = useFetch(`${BASE_URL}/users/`, `${userLogin}`);
-
-    const prop: IUserProps | any = response;
+    const prop: IUserProps = response;
 
     return (
             <div className="user-detail">
