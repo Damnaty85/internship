@@ -1,26 +1,26 @@
 import UserList from './UserList';
-import { IUserProps } from "../type/type";
+import { useContext } from 'react';
+import { Context } from '../context';
+import { IUserProps } from '../type/type';
 
-interface IArrayProp {
-    items?: IUserProps[]
-}
+const Result = () => {
+    const { data } = useContext<any>(Context);
 
-interface IDataProps {
-    data: IArrayProp
-}
-
-const Result = ({data}: IDataProps) => {
     if (!data.items) {
         return null;
     }
+
     return (
-        <div className="result">
-            {
-                data.items.map((item) => (
-                    <UserList items={item} key={item.id} />
-                ))
-            }
-        </div>
+        <section className='users'>
+            <h3>Your search result:</h3>
+            <div className="users__list">
+                {
+                    data.items.map((item: IUserProps) => (
+                        <UserList items={item} key={item.id} />
+                    ))
+                }
+            </div>
+        </section>
     )
 }
 
