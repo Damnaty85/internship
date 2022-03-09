@@ -14,34 +14,30 @@ const App: React.FC = () => {
     const [ query, setQuery ] = useState<string>("")
     const { response } = useFetch(`${BASE_URL}/search/users?q=`, `${query}`);
 
-    const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
-        setQuery(evt.target.value)
-    }
-
-    const handleSubmit = async (evt: React.FormEvent<SubmitEvent>) => {
-        evt.preventDefault();
-        setResponseData(response)
-    }
-
-
-  return (
-    <Context.Provider value={{
-		data: responseData,
-		handleSubmit: handleSubmit,
-		handleChange: handleChange,
-	}}>
-		<div className="App">
-			<BrowserRouter>
-				<Routes>
-					<Route path="/" element={<Home />}/>
-					<Route path='user/' element={<UserDetailPage/>}>
-						<Route path=":userLogin" element={<UserDetail />}/>
-					</Route>
-				</Routes>
-			</BrowserRouter>
-		</div>
-	</Context.Provider>
-  );
+	return (
+		<Context.Provider value={{
+			data: responseData,
+			handleSubmit: async (evt) => {
+				evt.preventDefault();
+				setResponseData(response)
+			},
+			handleChange: (evt) => {
+				const value = evt.target.value
+				setQuery(value)
+			},
+		}}>
+			<div className="App">
+				<BrowserRouter>
+					<Routes>
+						<Route path="/" element={<Home />}/>
+						<Route path='user/' element={<UserDetailPage/>}>
+							<Route path=":userLogin" element={<UserDetail />}/>
+						</Route>
+					</Routes>
+				</BrowserRouter>
+			</div>
+		</Context.Provider>
+	);
 }
 
 export default App;

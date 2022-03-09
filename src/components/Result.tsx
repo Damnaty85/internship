@@ -3,10 +3,18 @@ import { useContext } from 'react';
 import { Context } from '../context';
 import { IUserProps } from '../type/type';
 
-const Result = () => {
-    const { data } = useContext<any>(Context);
+interface IArrayProp {
+    items?: IUserProps[]
+}
 
-    if (!data.items) {
+interface IDataProps {
+    data?: IArrayProp,
+}
+
+const Result = () => {
+    const { data } = useContext<IDataProps>(Context);
+
+    if (!data?.items) {
         return null;
     }
 

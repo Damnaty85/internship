@@ -1,18 +1,15 @@
 import React from 'react';
-import { IUserProps } from './type/type';
-
-interface IArrayProp {
-    items?: IUserProps[]
-}
-
-interface IDataProps {
-    data?: IArrayProp,
-}
 
 interface IAppContextType {
-	data?: IDataProps,
-	handleSubmit?: (evt: React.FormEvent<SubmitEvent>) => void, 
+	data?: {},
+	handleSubmit?:  (evt: React.FormEvent<HTMLFormElement>) => void, 
 	handleChange?: (evt: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-export const Context = React.createContext({} as IAppContextType);
+const initialValue = {
+	data: {},
+	handleSubmit: () => {},
+	handleChange: () => {}
+}
+
+export const Context = React.createContext<IAppContextType>(initialValue);
