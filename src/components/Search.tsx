@@ -2,9 +2,9 @@ import { useContext } from 'react';
 import { Context } from '../context';
 
 const Search = () => {
-	const { handleSubmit, handleChange } = useContext<any>(Context);
+	const { handleSubmit, handleChange } = useContext(Context);
 	return (
-		<section className="search">
+		<section className="search _test">
 			<form onSubmit={handleSubmit}>
 				<h3>Search for users in the GitHub database</h3>
 				<label>
