@@ -1,17 +1,15 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import useFetch from '../customHooks/useFetch';
 import { IUserProps } from "../type/type";
 
 const BASE_URL = `https://api.github.com`;
 
-interface IUserLoginProp {
-    userLogin?: string
-}
 
-const UserDetail = ({userLogin}: IUserLoginProp) => {
+const UserDetail = () => {
+    let { userLogin } = useParams<{userLogin: string}>();
     const navigate = useNavigate();
     const { response } = useFetch(`${BASE_URL}/users/`, `${userLogin}`);
+
     const prop: IUserProps = response;
 
     return (

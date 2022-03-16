@@ -4,6 +4,7 @@ import Result from '../components/Result';
 const Home = () => {
     return (
         <>
+
             <Search />
             <Result />
         </>

@@ -1,7 +1,6 @@
 import UserList from './UserList';
-import { useContext } from 'react';
-import { Context } from '../context';
 import { IUserProps } from '../type/type';
+import { useAppSelector } from '../store/hooks/redux';
 
 interface IArrayProp {
     items?: IUserProps[]
@@ -12,7 +11,7 @@ interface IDataProps {
 }
 
 const Result = () => {
-    const { data } = useContext<IDataProps>(Context);
+    const { data } = useAppSelector<IDataProps>(state => state.appReducer)
 
     if (!data?.items) {
         return null;
